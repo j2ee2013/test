@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Creates a new user</title>
+    </h:head>
+    <h:body>
+        <h1>Create a new user</h1>
+        <hr/>
+        <h:form>
+            <p:growl id="msg"/>
+            <h:panelGrid columns="3" >
+                <h:outputLabel for="userName" value="Name: "/>
+                <p:inputText id="userName" immediate="true" value="#{registratorController.user.userName}">
+                    <p:ajax event="keyup" update="userNameAvaliable"/>
+                </p:inputText>
+                <h:outputLabel id="userNameAvaliable" value="#{registratorController.nameAvaliable}"/>
+                
+                <h:outputLabel for="userPwd" value="Pass Word: "/>
+                <p:password id="userPwd" value="#{registratorController.user.userPwd}" feedback="true"/>
+                <h:outputLabel value=""/>
+                
+                <h:outputLabel value="是否是管理员"/>
+                <p:selectBooleanButton value="#{registratorController.user.userPermission}" onLabel="admin" offLabel="user" onIcon="ui-icon-check" offIcon="ui-icon-close">  
+                    <p:ajax update="msg" listener="#{registratorController.addMessage()}"/>  
+                </p:selectBooleanButton>  
+                
+            </h:panelGrid>
+            
+            <p:commandButton value="Create a User" action="#{registratorController.doRegister()}"/>
+        </h:form>
+        <hr/>
+        <i>A simple User</i>
+        
+    </h:body>
+</html>

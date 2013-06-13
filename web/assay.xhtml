@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="GBK"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title> 个人游记</title>
+        <script type="text/javascript">
+        function note(){ 
+	window.alert ("在这里你可以按照题目旅游游记，也可以根据你想去的地方进行搜索~");
+	} 
+        </script>
+	<style type="text/css">
+        a:link,a:visited{text-decoration:none;}					   
+        a:visited {color: brown;}  /* 已被访问的链接 */
+        a:hover {color: #FF00FF;}    /* 当有鼠标悬停在链接上 */
+        a:active {color: #FF00FF;}   /* 被选择的链接 */
+	</style>
+        <link href="resources/assay/blank.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        <div id="container">
+	<!-- begin #header -->
+        <div id="header">
+		<div>
+                    <div class="logo">
+                        <h1 id="1">梦幻之旅</h1>
+                    </div>
+                    <ul id="navcontainer">
+                    <a href="http://localhost:9999/login.html"><w>登陆</w></a>
+                    <a href="#"><w>退出</w></a>
+                    <a href="http://localhost:9999/register.html"><w>注册</w></a>
+                    </ul>
+                </div>
+        
+                <br class="clearfloat" />
+                <div id="navcontainer">
+                <ul id="navlist">
+                    <li id="active"><a href="http://localhost:9999/javaEEproject.html" id="current">主页</a></li>
+                    <li><a href="http://localhost:9999/hot_suggestion.html">热门景点推荐</a></li>
+                    <li><a href="http://localhost:9999/Personal.html">个人主页</a></li>
+                    <li><a href="#" onclick="note();">关于本区</a></li>
+                    <input type="button" value="" class="buttonSearch" />
+                    <input type="text" name="" value="  点击输入" id="datepicker" class="searcharea" />
+                </ul>
+                </div>
+                <br class="clearfloat"/>
+                <br/>
+                <div><img src="resources/image/澳大利亚.jpg" alt="悉尼大桥" /></div>
+        </div>
+    
+        <div id="sidebar1">
+            <h2>相关游记</h2>
+            <ul>
+        	<li>
+            	<a href="#">悉尼：时空阻绝的浪漫</a><br />
+                    <!-- <a href="#"><img src="/in_blank2/images/p.png" class="seemore" alt="" /></a>-->
+                </li> 
+            <!-- <li>
+            	<img src="/in_blank/images/pic2.jpg" class="picPreview" alt="" />
+                                                        躺在沙滩上，看蓝天中朵朵白云飘过~<br />
+                <a href="#"><img src="/in_blank/images/p.png" class="seemore" alt="" /></a>
+            </li>-->
+                <li>
+                    <a href="#">【我们出发吧】悉尼，不如徒步——关于一个很上镜城市的行走</a>
+                                                        <br />
+                 <!--<a href="#"><img src="/in_blank/images/p.png" class="seemore" alt="" /></a>-->
+                </li>
+            <!-- <li>
+            	<img src="/in_blank/images/pic4.jpg" class="picPreview" alt="" />
+                                                       雕塑的魅力是永恒的~<br />
+                <a href="#"><img src="/in_blank/images/p.png" class="seemore" alt="" /></a>
+            </li> -->
+                <li>
+                    <a href="#">【浪漫蜜月游】悉尼、堪培拉、墨尔本 见证悉尼婚礼</a><br />
+                <!--  <a href="#"><img src="/in_blank/images/p.png" class="seemore" alt="" /></a>-->
+                </li>
+            <!--<li>
+            	<img src="/in_blank/images/pic6.jpg" class="picPreview" alt="" />
+                                                      只有当夕阳洒在水中时，你才会觉得它那金灿的美~<br />
+                <a href="#"><img src="/in_blank/images/p.png" class="seemore" alt="" /></a>
+            </li>-->
+                <li>
+                    <a href="#">【花样年华】【2013·行走】我在澳大利亚的那些脚印</a><br />
+                <!-- <a href="#"><img src="/in_blank/images/p.png" class="seemore" alt="" /></a> -->
+                </li>
+            </ul>
+        </div>
+        
+        
+        <div id="mainContent">
+            <h1>澳大利亚,到地球的另一端追求梦想</h1>
+            <br/>
+            <h2><a href="#1">前序</a></h2>
+            <h2><a href="#2">澳大利亚游记之一：从蛮荒之地到度假天堂</a></h2>杭州 - 香港 - 布里斯班 宿: Radisson Resort<br/>
+        
+            <h2><a href="#3">澳大利亚游记之二：天堂牧场体验到真实的澳洲农庄有趣的生活。</a></h2>布里斯本 - 布里斯本 宿: Sea World Nara Resort<br/>
+            <h2><a href="#4">在华纳兄弟电影世界里，我圆了一个明星梦</a></h2>布里斯本 - 凯恩斯 宿: Rydges<br/>
+            <h2><a href="#5">澳大利亚游记三：黄金海岸的“美妙阳光”</a></h2>
+            <h2> <a href="#6">“上天下海”探秘大堡礁，寻找小丑鱼尼莫的故乡</a></h2>凯恩斯大堡礁<br/><br/>
+            <hr/>
+            <h2 id="1">前序</h2>
+            <p>地球以赤道为界分南北两极，北半球与南半球气候相反，风物相异。
+                澳大利亚，正好与中国背对背，中国位于北半球，他却在地球的另一端与我们隔海相望。
+            </p>
+            <ul>
+            <li>气候</li>
+            <p>澳洲地处南半球，虽然时差与中国只有2小时，但是季节却完全相反。
+                12月-2月为夏季，3月-5月为秋季，6月-8月为冬季，9月-11月为春季。
+                我们去的9月刚好是澳洲的初春，早晚凉，要穿单件毛衣，中午有30多度，可以直接下海游泳</p>
+            <li>货币、物价</li>
+            <p>澳大利亚通用货币为澳元，汇率大概在1澳元≈6.9人民币。我们出发前就在杭州换好了澳币。澳洲消费基本都可以刷卡。
+                澳洲物价比较国内高，比如汉堡要5块澳币钱，一瓶水液体要3、4元。
+                在大堡礁有很多水上项目可玩，水肺深潜水要136澳币，海底漫步要140澳币，这些都要付现金。所以可以在国内多换些澳元。</p>
+            <li>女生个护用品</li>
+            <p>澳大利亚的昆士兰州有阳光之洲的别称。
+                所以保湿防晒的化妆品、太阳帽、太阳镜、30倍系数医生防晒霜一定得带。
+                西方人讲究自然，整个澳洲没有人在阳光下撑伞，如果在澳洲撑伞会被视为很怪异的行为。</p>
+            <li>电源转换</li>
+            <p>澳大利亚一般240V，50HZ交流电，使用三脚扁形插头。建议自备多用途插头。</p>
+            <li>过安检申报</li>
+            <p> 澳洲的入境安检很严。因为澳洲是个人为污染低的国家，因此他们尽可能的维护与保持他们原始的风貌，
+                因此严格禁止各种可能危害他们自然景观或人文的物品进入。比如任何肉类、种子、蔬菜、水果都不能带入澳洲。
+                中国人喜欢当点心的蛋黄派和月饼，因为里面含有蛋黄，也常被查扣。还有方便面里面有肉料包也不能带进。旅游团稍微好一点。
+                我们在飞机上时，请空姐帮忙点好物品申报单。带了食物一定要申报，申报如果不能通过大不了就被没收，如果不申报被查到就要罚款2000澳币。</p>
+            </ul>
+            <img src="resources/image/海港夕阳.jpg" alt="海港夕阳"/>
+            <br/>
+    	
+            <h2 id="2">澳大利亚游记之一：从蛮荒之地到度假天堂</h2>
+            <p>澳洲是一块处于太平洋、印度洋和大西洋怀抱中的大陆，是世界上最小的陆洲和最大的岛屿，形成于1.6亿年前冈瓦那超级大陆块分裂时期。
+                虽然被称呼为“世界的另一边”，但澳大利亚是世界上第六大国，它的大陆块比英国大32倍，也是唯一一个被水环绕的国家。
+                南回归线在印度洋和太平洋的大陆之间划开一道清晰的分界线，澳洲也成为东西方文化的交汇点。</p>
+            <img src="resources/image/金沙碧海.jpg" alt=""/>
+       
+            <h2 id="3">澳大利亚游记之二：天堂牧场体验到真实的澳洲农庄有趣的生活。</h2>
+            <img src="resources/image/一只羊很快被剥得精光.jpg" alt="一只羊很快被剥得精光"/>
+            <p>天堂牧场，位于布里斯班市郊，这是一个开放观光的牧场，在这里，可以体验到真实的澳洲农庄有趣的生活。
+                比如可以观看牧羊犬赶羊进圈表演。聪明的牧羊犬有策略地把四处分散的羊群聚集在一起，乖乖地驱赶进羊圈。
+                还有令人拍案叫绝剪羊毛表演。澳大利亚羊毛的产量、质量和出口量居世界第一位。
+                绵羊品种以美利奴羊为主，这样卷角羊毛发厚实，质地柔韧，光泽好，是上乘的毛纺原料。
+                表演在一个大厅里举行，身着牛仔服的表演者，极具幽默才能，在搞笑表演中，介绍了在澳洲放牧的八个品种羊群，然后现场表演剪羊毛。
+                过去，剪羊毛是用手工，快手一天也只能剪200多只，如今采用电剪，高手一天能剪400只，平均两、三分钟就剪一只，高超的技艺，也算澳大利亚独一无二的澳洲传统文化吧。
+                澳大利亚的旅游服务做得非常细心，游客观赏表演都有翻译机提供，不必担心语言上的障碍。</p>
+        
+            <h2 id="4">在华纳兄弟电影世界里，我圆了一个明星梦</h2>
+            <p>离开了天堂牧场，我们坐着园区的电瓶车来到毗邻的华纳兄弟电影世界。
+                华纳兄弟电影世界如同美国好莱坞的缩小版，却比好莱坞更好玩。里面的建筑都是以著名的电影场景为蓝本扩建而成。
+                身处其间，好像在不同电影里“穿越”。游客会不时碰到一些“著名人物”，比如女士们最爱的蝙蝠侠、猫女，宾尼兔，还有白裙飘飘的性感女郎玛丽莲·梦露.
+                游客可以和他们耍宝聊天，拥抱合影留念。</p>
+            <img src="resources/image/巡游开始.jpg" alt="巡游开始"/>
+        
+            <h2 id="5">澳大利亚游记三：黄金海岸的“美妙阳光”</h2>
+            <p>澳大利亚行程的第三站，就是闻名遐迩的“黄金海岸”。很多人以为黄金海岩就是一片辽阔的海滩，其实不然，黄金海岸是一座海滨旅游城市，有点像浙江的舟山。
+                它位于布里斯班以南，城市的西面紧挨着一段长约40多公里金色沙滩，就好像给城市镶上了一道长长的金边。
+                每年这里至少有300天的阳光普照，因此就有了“澳洲的假日乐园”的称号，吸引了数百万游客“趋之若鹜”来度假。</p>
+            <img src="resources/image/布里斯班.jpg" alt="布里斯班"/>
+        </div>
+      <div class="button" align="right"><a href="#1"><img src="resources/image/top.png" alt=""/></a></div>
+      <div id="footer">
+        <div class="footerHeader"></div>
+            <div class="footerBody">
+                <div class="copyright">
+                    Terms of Use |
+                    <a title="This page validates as XHTML 1.0 Strict" href="#" class="footerLink"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | 
+                    <a title="This page validates as CSS" href="#" class="footerLink"><abbr title="Cascading Style Sheets">CSS</abbr></a><br />Copyright copy;cherish_yang. All rights reserved. 
+                </div>
+            </div>
+       </div>
+      
+      
+      
+        </div>
+    </h:body>
+</html>

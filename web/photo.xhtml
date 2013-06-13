@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="GBK"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+        <title>旅游画册</title>
+        <script type="text/javascript">
+        function note(){ 
+	window.alert ("在这里你可以一览各地的景区图片，就算未曾亲临，也能领略那里的美景~");
+	} 
+	function large(){
+	window.open('photo_large.html', 'newwindow', 'height=430, width=910, top=130,left=250, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');
+	}
+</script>
+
+<link href="resources/css/photo_blank.css" rel="stylesheet" type="text/css" />
+</h:head>
+<h:body>
+        <!-- begin #container -->
+<div id="container">
+	<!-- begin #header -->
+    <div id="header">
+		<div>
+        	<div class="logo">
+            	<h1 id="1">梦幻之旅</h1>
+            </div>
+            <ul id="navcontainer">
+                <a href="http://localhost:9999/login.html"><w>登陆</w></a>
+                <a href="#"><w>退出</w></a>
+                <a href="http://localhost:9999/register.html"><w>注册</w></a>
+        </ul>
+        </div>
+        <div id="navcontainer">
+            <ul id="navlist">
+                <li id="active"><a href="javaEEproject.html" id="current">主页</a></li>
+                <li><a href="http://localhost:9999/hot_suggestion.html">热门景点推荐</a></li>
+                <li><a href="http://localhost:9999/space.html">个人主页</a></li>
+                <li><a href="#" onclick="note();">关于画册</a></li>
+                <input type="button" value="" class="buttonSearch" />
+            	<input type="text" name="" value="  点击输入" id="datepicker" class="searcharea" />
+            </ul>
+        </div>
+        
+        <div id="navcontainer">    
+        </div>
+        <br class="clearfloat"/>
+        <br/>
+        <div><img src="./photos/images/樱花之空_副本.jpg" alt="" /></div>
+    </div>
+    <!-- end #header -->
+    <!-- begin .boxes -->
+        <div class="boxes">
+			<ul>
+            	<li class="shadowStyle">
+                	<h3>pic1</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                <li class="shadowStyle">
+                	<h3>pic2</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/且听风吟_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                <li class="shadowStyle">
+                	<h3>pic3</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                 <br class="clearfloat" />
+                 <br/>
+                 
+                 <li class="shadowStyle">
+                	<h3>pic1</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                <li class="shadowStyle">
+                	<h3>pic2</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/且听风吟_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                <li class="shadowStyle">
+                	<h3>pic3</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                 <br class="clearfloat" />
+                 <br/>
+                 
+                 <li class="shadowStyle">
+                	<h3>pic1</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                <li class="shadowStyle">
+                	<h3>pic2</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/且听风吟_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                <li class="shadowStyle">
+                	<h3>pic3</h3>
+                	<a href="#" onclick="large();"><img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"></img></a>
+                	<h3>描述</h3>
+                </li>
+                 <br class="clearfloat" />
+                 <br/>
+                        </ul>
+        </div>
+    <!--end .boxes -->
+    <!-- begin #mainContent -->
+    <div id="mainContent">
+    	<br/>
+        <div class="horSeparator"></div>
+       
+        <br class="clearfloat" />
+    </div>
+    <!-- end #mainContent -->
+</div>
+<!-- end #container -->
+	<div class="button" align="right"><a href="#1"><img src="resources/image/top.png" alt=""/></a></div>
+<!-- begin #footer -->
+<div id="footer">
+    <div class="footerHeader"></div>
+    <div class="footerBody">
+    	<div class="copyright">
+        	Terms of Use |
+        <a title="This page validates as XHTML 1.0 Strict" href="#" class="footerLink"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | 
+        <a title="This page validates as CSS" href="#" class="footerLink"><abbr title="Cascading Style Sheets">CSS</abbr></a><br />Copyright copy;cherish_yang. All rights reserved. 
+        </div>
+    </div>
+</div>
+<!-- end #footer -->
+</h:body>
+</html>

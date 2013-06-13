@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>List of the Users</title>
+    </head>
+    <body>
+        <h1>List of the Users</h1>
+        <hr/>
+        <h:dataTable value="#{registratorController.userList}" var="ul" border="1">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Name: "/>
+                </f:facet>
+                <h:outputText value="#{ul.userName}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Pass Word: "/>
+                </f:facet>
+                <h:outputText value="#{ul.userPwd}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Permission: "/>
+                </f:facet>
+                <h:outputText value="#{ul.userPermission}"/>
+            </h:column>
+        </h:dataTable>
+        <h:form>
+            <h:link outcome="Registration.xhtml" value="Create a new User"/>
+            <h:link outcome="LogIn.xhtml" value="登陆"/>
+        </h:form>
+        <hr/>
+        <i>A simple User</i>
+    </body>
+</html>
