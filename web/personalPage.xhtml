@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>#{personalPageControl.userName}的个人中心 </title>
+
+
+        <style type="text/css">
+            a:link,a:visited{text-decoration:none;}					   
+            a:visited {color: brown;}  /* 已被访问的链接 */
+            a:hover {color: #FF00FF;}    /* 当有鼠标悬停在链接上 */
+            a:active {color: #FF00FF;}   /* 被选择的链接 */
+            fieldset {
+                width: 900px;
+                margin: 20px auto 10px auto;
+                border: 1px solid #d6d6d6;				
+                line-height: 1.6em;}
+            legend {
+                font-style: italic;
+                color: #666666;}
+            label {
+                display:block;}
+            input[type="text"] {
+                width: 200px;
+                border: 1px solid #d6d6d6;
+                padding: 2px;
+                outline: none;}
+            input[type="text"]:focus,
+            input[type="text"]:hover {
+                background-color: #d0e2f0;
+                border: 1px solid #999999;}
+            input[type="submit"] {
+                border: 1px solid #006633;
+                background-color: #009966;
+                color: #ffffff;
+                border-radius: 5px;
+                padding: 5px;
+                margin-top: 10px;}
+            input[type="submit"]:hover {
+                border: 1px solid #006633;
+                background-color: #00CC33;
+                color: #ffffff;
+                cursor: pointer;}
+            .title {
+                float: left;
+                width: 160px;
+                clear: left;}
+            .submit {
+                width: 310px;
+                text-align: left;}	
+            td {
+                margin-bottom: 10px;
+                border-bottom-width: 3px;
+                border-bottom-style: solid;
+                border-bottom-color: #f2f2f2;}
+            td a {
+                padding-top: 0px;
+                padding-right: 10px;
+                padding-bottom: 0px;
+                padding-left: 10px;
+                color: #007fd6;
+                display: block;}
+            </style>
+            <link href="resources/in_blank/blank.css" rel="stylesheet" type="text/css" />  
+            <script src="resources/js/personalpage.js"></script>
+        </h:head>
+        <h:body>
+            <!-- begin #container -->
+            <div id="container">
+            <!-- begin #header -->
+            <div id="header">
+                <div>
+                    <div class="logo">
+                        <h1>梦幻之旅</h1>
+                    </div>
+                    <ul id="navcontainer">
+                        <a href="http://localhost:9999/login.html"><w>登陆</w></a>
+                        <a href="#"><w>退出</w></a>
+                        <a href="#"><w>注册           </w></a>
+                    </ul>
+                </div>
+
+                <br class="clearfloat" />
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li id="active"><a href="http://localhost:9999/javaEEproject.html" id="current">主页</a></li>
+                        <li><a href="#">热门推荐</a></li>
+                        <li><a href="http://localhost:9999/space.html">个人主页</a></li>
+                        <li><a href="#" onclick="note();">关于本区</a></li>
+                        <input type="button" value="" class="buttonSearch" />
+                        <input type="text" name="" value="  点击输入" id="datepicker" class="searcharea" />
+                    </ul>
+                </div>
+                <br class="clearfloat"/>
+                    <br/>      
+            </div>
+
+
+
+            <div id="sidebar1">
+                <a href="#" target="_parent"><img src="Personal/images/templatemo_image_01.jpg" alt="Image 2" class="image_wrapper image_fr" /></a>
+                <h2>Family1998</h2>
+                <strong>简介：</strong>
+                <p> 一件事关注够久就能成为行家。</p><br/>
+
+                <strong>爱好：</strong>
+                <p>自助、自驾、购物、摄影、自然风光、休闲度假、户外探险 </p><br/>
+                <ul>
+                    <li><h2>最新动态</h2>
+                        <ul>
+                            <li>Family1998推荐了游记：<br/>
+                                <a href="assay.html">澳大利亚之行</a></li>
+                            <li><a href="#">更多</a></li>
+                        </ul>
+                        <br/>
+                    </li>
+
+                    <li><h2>我推荐的主题</h2>
+                        <ul>
+                            <li><a href="in_blank.html">国内游</a></li>
+                            <li><a href="in_blank2.html">国外游</a></li>
+                        </ul>
+                        <br/>
+                    </li>
+
+                    <li><h2>我收藏的主题</h2>
+                        <ul>
+                            <li><a href="in_blank3.html">主题游</a></li>
+                            <li><a href="#">精品游</a></li>
+                        </ul>
+                        <br/>
+                    </li>
+
+                    <li><h2>最近来访</h2>  
+                        <ul>
+                            已经很久没有足迹了呢！
+                        </ul>         
+                        <br/>
+                    </li>
+                </ul>
+                <audio src="Personal/music.mp3" controls="controls" autoplay="autoplay"></audio>
+            </div>
+
+
+            <div id="mainContent">
+                <div>
+                    <br/>
+                    <table border="0" cellpadding="0" cellmargin="0" width="700px" heigth="90px">
+                        <tbody>
+                            <tr>
+                                <ul>
+                                    <td><h3><strong><font color="black">个人空间</font></strong></h3></td>
+                                    <td><a href="#"><strong>足迹</strong></a></td>
+                                    <td><a href="#"><strong>画册</strong></a></td>
+                                    <td><a href="#"><strong>游记</strong></a></td>
+                                    <td><a href="#"><strong>旅程</strong></a></td>
+                                    <td><a href="#"><strong>计划</strong></a></td>
+                                    <td><a href="#"><strong>回复</strong></a></td>
+                                    <td><a href="#"><strong>推荐</strong></a></td>
+                                    <td><a href="#"><strong>想去</strong></a></td>
+                                    <td><a href="#"><strong>去过</strong></a></td>
+                                    <td><a href="#"><strong>动态</strong></a></td>
+                                    <td><a href="#"><strong>目的地</strong></a></td>   
+                                </ul>       
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <h2><strong>我的游记</strong></h2>
+
+                    <ul>
+                        <li><a href="assay.html"><h3>澳大利亚,到地球的另一端追求梦想</h3></a></li>
+                        <p>出发地：上海 游玩天数：11 出发时间：2013年06月</p>
+                        <br/>
+                        大堡礁，地广人稀，热情，海洋，沙滩，雨林，自然，闲晃，历史，割舍不了的英国记忆，这些都是澳大利亚的标签。
+                        <SPAN style="DISPLAY: none" id="hidden_div">早晨一下飞机，瞬间就感觉到了冬天和夏天的差别，LZ冷啊，所以立刻就去卫生间加了件衣服。
+                            到墨尔本的时候，天气大概是十度的样子，但街上的当地人还有穿短袖的，于是，深刻感受到了西方人的体质是如何如何的好
+                            （当然，穿成像LZ这样的还是大有人在哈）。然后就跟着当地的华人导游开始了第一天行程。<br/>
+
+                            发现了一个很有趣的现象。澳大利亚的车（尤其是旅游车）都会在车子后面挂上一个拖箱，就象是这样。
+                            甚至有些小轿车开车买菜也用这样一个拖箱把买的菜拖在后面。感觉很好玩，很新奇。<br/>
+                            菲茨罗伊花园，其实就是澳大利亚很普通的一个街心花园。大片大片的草地，粗壮的树木，低矮的灌木丛，拼凑出了它。
+                            澳洲的花园都是这么简单，但在这些简单中有隐隐约约地透着不平凡。对，低调的奢华。
+                            沿着路跑步的人，坐在长椅上读书的人，躺在草地上晒太阳的人，还有我们这群提着相机的游人。
+                            这里顺便来解答一下前面我提的问题（伤心，居然没有人甩我…）。
+                            有的书上裹着铁皮而有的没有是因为树上常年生活着一群果子狸，但它们总喜欢上窜下跳，一会儿再这棵树上，一会儿又窜到了那棵树上，久而久之，把树木都破坏了。
+                            所以，澳洲政府想了一个办法，在树上裹起铁皮后，上面的果子狸就下不来了，等到一段时间后再给树“松绑”，让果子狸下来，换到另一棵树上，这棵树就可以恢复休息一下。
+                            如此行动过后，既保护了树也保护了果子狸。</SPAN>...<A
+                            id="_strHref" href="javascript:show_hiddendiv();"><SPAN
+                                id="_strSpan">more</SPAN></A>
+
+                        <li><a href="#"><h3>一个人说走就走的旅行-哈尔滨雪乡六日记</h3></a></li>
+                        <p>出发地：北京 游玩天数：3 出发时间：2013年09月</p> <br/>
+                        <SCRIPT type="text/javascript">
+                      function show_hiddendiv() {
+                          document.getElementById("hidden_div").style.display = 'block';
+                          document.getElementById("_strHref").href = 'javascript:hidden_showdiv();';
+                          document.getElementById("_strSpan").innerHTML = "隐藏部分";
+                      }
+                      function hidden_showdiv() {
+                          document.getElementById("hidden_div").style.display = 'none';
+                          document.getElementById("_strHref").href = 'javascript:show_hiddendiv();';
+                          document.getElementById("_strSpan").innerHTML = "显示全部";
+                      }
+                        </SCRIPT>
+                        新西兰似乎是为了证明这个世界上的浪漫场景，鸟儿在这里没有天敌，岛上满眼苍翠的绿地，日子舒服得有些太过安逸。
+                        <SPAN style="DISPLAY: none" id="hidden_div">
+                            2010年秋天，当我们挣扎在安纳普尔纳峰大环线（尼泊尔，喜马拉雅山脉）陡峭的岩石上，突发奇想，确定了2009年的目标是新西兰自驾之旅。
+                            说实话，这个想法对于当时的我们而言，是一个纯纯粹粹的幻想，谁也没有想过真的去实现，虚无缥缈的同时交织着欣喜和沮丧。
+                            <br/>
+                            “There is a will, there is a way.”
+                            <br/>
+                            世事就是这样，当我们被强大的命运牵引着，冥冥中的那一刻来到眼前，你才会惊叹，原来这一刻早在你生命中早已注定，你注定会遇到那一个人，
+                            注定会来到地球上那一个位置，这一切似乎就为你所铸造，在漫漫的宇宙中长河中，等待你的到来。
+                            <br/>
+                            那一刻，让我们哽咽，让我们欢笑，百感交集、肃然起敬！
+                            <br/>
+                            享受了一个永生难忘的假期，走过了一段值得用一生去回味的旅程</SPAN>...<A
+                            id="_strHref" href="javascript:show_hiddendiv();"><SPAN
+                                id="_strSpan">more</SPAN></A>  	
+                    </ul><br/>
+                    最近更新于:2013-06-08
+                    <hr/></div>
+                <br/>
+                <div>
+                    <h2><strong>我的相册</strong></h2>  
+
+                    <script language ="javascript" >
+                  var curIndex = 0;
+                  var timeInterval = 2000;
+                  var arr = new Array();
+                  arr[0] = "1.jpg";
+                  arr[1] = "2.jpg";
+                  arr[2] = "3.jpg";
+                  arr[3] = "4.jpg";
+                  setInterval(changeImg, timeInterval);
+                  function changeImg()
+                  {
+                      var obj = document.getElementById("showpic");
+                      if (curIndex == arr.length - 1) {
+                          curIndex = 0;
+                      }
+                      else {
+                          curIndex += 1;
+                      }
+                      obj.src = "Personal/images/" + arr[curIndex];
+                  }
+                    </script>
+                    <img src="Personal/images/1.jpg" id="showpic"/> 
+                </div>
+
+                <div>
+                    <form>
+                        <fireldset>
+                            <p>
+                                <h2><strong><label for="comments">留言板:</label></strong></h2><br />
+                                <textarea rows="6" cols="80" id="comments"  required="required" placeholder="Write your message here."></textarea>
+                            </p>
+                            <label><input type="checkbox" name="subscribe" checked="checked" /> 
+                                Sign me up for email updates</label>
+                            </fireldset>
+                            <div class="submit"><input type="submit" value="发表留言" /></div>		
+                    </form>
+                </div>
+
+            </div>
+
+            <div id="footer">
+                <div class="footerHeader"></div>
+                <div class="footerBody">
+                    <div class="copyright">
+                        Terms of Use |
+                        <a title="This page validates as XHTML 1.0 Strict" href="#" class="footerLink"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | 
+                        <a title="This page validates as CSS" href="#" class="footerLink"><abbr title="Cascading Style Sheets">CSS</abbr></a><br />Copyright &copy;cherish_yang. All rights reserved. 
+                    </div>
+                </div>
+            </div>
+            </div>
+    </h:body>
+</html>
+

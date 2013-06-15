@@ -12,157 +12,162 @@ Modified by jack_yu
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-<h:head>
-<title>梦幻旅行</title>
-<script type="text/javascript">
-   function connection(){ 
-	window.alert ("电话：###；邮箱：###");
-	} 
-   function help(){
-	window.alert("这里包括国内游、国外游、主题游三个模块，你可以根据自己想去的地方或者旅游目的进行选择，祝你开心！更多信息可以联系我们，进一步为您解答~");
-	}
-</script>
-<link href="resources/css/styles.css" rel="stylesheet" type="text/css" />
-<script src="resources/js/jquery-1.7.1.min.js"></script>
-<script src="resources/js/jquery.flexslider-min.js"></script>
-</h:head>
-<h:body>
-<header>
-    <div class="headerContainer">
-        <h1 id="1">梦幻之旅</h1>
-        <ul id="navcontainer">
-                <a href="http://localhost:9999/login.html"><w>登陆</w></a>
-                <a href="#"><w>退出</w></a>
-                <a href="http://localhost:9999/register.html"><w>注册</w></a>
-        </ul>
-        <br/>
-        <br class="clearfloat" />
-        <div id="navcontainer">
-            <ul id="navlist">
-                <li id="active"><a href="#">首页</a></li>
-                <li><a href="http://localhost:9999/hot_suggestion.html">热门景点推荐</a></li>
-                <li><a href="http://localhost:9999/assay.html">游记</a></li>
-                <li><a href="http://localhost:9999/Personal.html">个人主页</a></li>
-                <li>       </li>
-                <input type="button" value="" class="buttonSearch" />
-            	<input type="text" name="" value="  点击输入" id="datepicker" class="searcharea" />
-            </ul>
-        </div>
-        <br class="clearfloat" />
-        <!-- begin .slider -->
-        <div class="slider">
-            <div class="flexslider">
-                <ul class="slides">
-                    <li><img src="resources/image/海水_副本.jpg" alt="" class="shadowStyle"/></li>
-                    <li><img src="resources/image/蓝海一瞥_副本.jpg" alt="" class="shadowStyle"/></li>
-                    <li><img src="resources/image/林中日光_副本.jpg" alt="" class="shadowStyle"/></li>
+    <h:head>
+        <title>梦幻旅行</title>
+        <script type="text/javascript">
+            function connection() {
+                window.alert("电话：###；邮箱：###");
+            }
+            function help() {
+                window.alert("这里包括国内游、国外游、主题游三个模块，你可以根据自己想去的地方或者旅游目的进行选择，祝你开心！更多信息可以联系我们，进一步为您解答~");
+            }
+        </script>
+        <link href="resources/css/styles.css" rel="stylesheet" type="text/css" />
+        <script src="resources/js/jquery-1.7.1.min.js"></script>
+        <script src="resources/js/jquery.flexslider-min.js"></script>
+    </h:head>
+    <h:body>
+        <header>
+            <div class="headerContainer">
+                <h1 id="1">梦幻之旅</h1>
+                <ul id="navcontainer">
+
+                    <h:outputLabel value="Hi, " rendered="#{logincontrol.loginSign!='false'}"/>
+                    <h:outputLink  rendered="#{logincontrol.loginSign!='false'}" value="space.xhtml" ><h:outputLabel value="#{logincontrol.user.userName}"/></h:outputLink>
+                    <h:outputLink  rendered="#{logincontrol.loginSign=='false'}" value="userLogin.xhtml" ><w>登陆</w></h:outputLink>
+                    <h:form><h:commandButton rendered="#{logincontrol.loginSign!='false'}" action="#{logincontrol.doLogout()}" value="退出" ></h:commandButton></h:form>
+                    <h:outputLink  rendered="#{logincontrol.loginSign=='false'}" value="Registration.xhtml" ><w>注册</w></h:outputLink>
+
+
+                </ul>
+                <br/>
+                <br class="clearfloat" />
+                <div id="navcontainer">
+                    <ul id="navlist">
+                        <li id="active"><a href="#">首页</a></li>
+                        <li><a href="http://localhost:9999/hot_suggestion.html">热门景点推荐</a></li>
+                        <li><a href="http://localhost:9999/assay.html">游记</a></li>
+                        <li><a href="http://localhost:9999/Personal.html">个人主页</a></li>
+                        <li>       </li>
+                        <input type="button" value="" class="buttonSearch" />
+                        <input type="text" name="" value="  点击输入" id="datepicker" class="searcharea" />
+                    </ul>
+                </div>
+                <br class="clearfloat" />
+                <!-- begin .slider -->
+                <div class="slider">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li><img src="resources/image/海水_副本.jpg" alt="" class="shadowStyle"/></li>
+                            <li><img src="resources/image/蓝海一瞥_副本.jpg" alt="" class="shadowStyle"/></li>
+                            <li><img src="resources/image/林中日光_副本.jpg" alt="" class="shadowStyle"/></li>
+                        </ul>
+                    </div>
+                </div>
+                <br class="clearfloat" />
+                <!-- end .slider -->
+
+            </div>
+        </header>
+        <div class="container">
+            <section>
+                <!-- begin .boxes -->
+                <div class="boxes">
+                    <ul>
+                        <li class="shadowStyle">
+                            <h2><a href="http://localhost:9999/in_blank.html">国内游</a></h2>
+                            <img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"/>
+                            <p>
+                                赏庭前花开花落，看天边云卷云舒……
+                            </p>
+                            <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
+                        </li>
+                        <li class="shadowStyle">
+                            <h2>且听风吟</h2>
+                            <img src="resources/image/且听风吟_副本.jpg" alt="" class="boxPic shadowStyle"/>
+                            <p>
+                                耳畔铃声叮咚，声声入耳，音音入心……
+                            </p>
+                            <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
+                        </li>
+                        <br class="clearfloat" />
+                        <br/>
+                        <li class="shadowStyle">
+                            <h2><a href="http://localhost:9999/in_blank2.html">国外游</a></h2>
+                            <img src="resources/image/苏梅岛_副本.jpg" alt="" class="boxPic shadowStyle"/>
+                            <p>                   
+                                暂且允许我在这神的花园里，流连于梦想，忘返于现实吧……
+                            </p>
+                            <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
+                        </li>
+                        <li class="shadowStyle">
+
+                            <h2>枫叶之约</h2>
+                            <img src="resources/image/枫叶_副本.jpg" alt="" class="boxPic shadowStyle"/>
+                            <p>
+                                ”停车坐爱枫林晚，霜叶红于二月花“ 大概就是此情此景吧……
+                            </p>
+                            <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
+                        </li>
+                        <br class="clearfloat" />
+                        <br/>
+                        <li class="shadowStyle">
+
+                            <h2><a href="http://localhost:9999/in_blank3.html">主题游</a></h2>
+                            <img src="resources/image/婚纱照_副本.jpg" alt="" class="boxPic shadowStyle"/>
+                            <p>
+                                我想，我今生最美的愿望就是和你漫步花海，地老天荒……
+                            </p>
+                            <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
+                        </li>
+                        <li class="shadowStyle">
+
+
+                            <h2>精致美食</h2>
+                            <img src="resources/image/甜品_副本.jpg" alt="" class="boxPic shadowStyle"/>
+                            <p>
+                                浪迹天涯，品尝佳肴 执子之手，与子偕老 </p>
+                            <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
+                        </li>
+                    </ul>
+                    <br class="clearfloat" />
+                </div>
+                <!-- end .boxes -->
+                <h2>精彩游记攻略</h2>
+                <hr/>
+            </section>
+            <!-- begin Right List -->
+            <div class="rightList shadowStyle">
+                <h2>旅游のために</h2>
+                <p>
+                    <img src="resources/image/傍晚海面_副本.jpg" alt="" class="floatPic shadowStyle"/>
+                    旅行的意义，不是逃避，不是艳遇，不是放松心情，更不是炫耀，而是为了洗一洗身体和灵魂，给自己换一种新的眼光，甚至一种生活方式，给生命增加多一种可能性的叉枝。没有年假、钱不够花……总有种种理由阻止我们去旅行。
+                    那么做一个梦也好，跟途客一起，带眼睛去旅行。
+                </p>
+            </div>
+            <!-- end Right List -->
+            <!-- begin Left List -->
+            <div class="leftList">
+                <h2>让旅游更简单</h2>
+                <ul>
+                    <li><a href="http://localhost:9999/assay.html">游记攻略</a></li>
+                    <li><a href="http://localhost:9999/photos.html">旅游画册</a></li>
+
+
+                    <li><a href="#" onclick="help();">帮助指南</a></li>
+                    <li><a href="http://lvyou.baidu.com">友情链接</a></li>
+                    <li><a href="#" onclick="connection();">联系我们</a></li>
                 </ul>
             </div>
-        </div>
-        <br class="clearfloat" />
-        <!-- end .slider -->
-        
-    </div>
-</header>
-<div class="container">
-    <section>
-    	<!-- begin .boxes -->
-        <div class="boxes">
-			<ul>
-            	<li class="shadowStyle">
-                	<h2><a href="http://localhost:9999/in_blank.html">国内游</a></h2>
-                	<img src="resources/image/荔枝_副本.jpg" alt="" class="boxPic shadowStyle"/>
-                    <p>
-                    	赏庭前花开花落，看天边云卷云舒……
-                  </p>
-                  <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
-                </li>
-                <li class="shadowStyle">
-                	<h2>且听风吟</h2>
-                	<img src="resources/image/且听风吟_副本.jpg" alt="" class="boxPic shadowStyle"/>
-                    <p>
-                        耳畔铃声叮咚，声声入耳，音音入心……
-                  </p>
-                  <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
-                </li>
-                 <br class="clearfloat" />
-                 <br/>
-                 <li class="shadowStyle">
-                	<h2><a href="http://localhost:9999/in_blank2.html">国外游</a></h2>
-                	<img src="resources/image/苏梅岛_副本.jpg" alt="" class="boxPic shadowStyle"/>
-                    <p>                   
-                    暂且允许我在这神的花园里，流连于梦想，忘返于现实吧……
-                  </p>
-                  <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
-                </li>
-                 <li class="shadowStyle">
-                	
-                	<h2>枫叶之约</h2>
-                	<img src="resources/image/枫叶_副本.jpg" alt="" class="boxPic shadowStyle"/>
-                    <p>
-                    ”停车坐爱枫林晚，霜叶红于二月花“ 大概就是此情此景吧……
-                 </p>
-                  <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
-                </li>
-                <br class="clearfloat" />
-                <br/>
-                 <li class="shadowStyle">
-                	
-                	<h2><a href="http://localhost:9999/in_blank3.html">主题游</a></h2>
-                	<img src="resources/image/婚纱照_副本.jpg" alt="" class="boxPic shadowStyle"/>
-                    <p>
-                    我想，我今生最美的愿望就是和你漫步花海，地老天荒……
-                    </p>
-                    <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
-                </li>
-                 <li class="shadowStyle">
-                 
-                 
-                	<h2>精致美食</h2>
-                	<img src="resources/image/甜品_副本.jpg" alt="" class="boxPic shadowStyle"/>
-                    <p>
-                    浪迹天涯，品尝佳肴 执子之手，与子偕老 </p>
-                  <div class="button"><a href="http://localhost:9999/in_blank.html"><img src="resources/image/more.png" alt=""/></a></div>
-                </li>
-            </ul>
+            <!-- end Left List -->
+
             <br class="clearfloat" />
         </div>
-        <!-- end .boxes -->
-        <h2>精彩游记攻略</h2>
-        <hr/>
-    </section>
-    <!-- begin Right List -->
-    <div class="rightList shadowStyle">
-        <h2>旅游のために</h2>
-        <p>
-            <img src="resources/image/傍晚海面_副本.jpg" alt="" class="floatPic shadowStyle"/>
-            旅行的意义，不是逃避，不是艳遇，不是放松心情，更不是炫耀，而是为了洗一洗身体和灵魂，给自己换一种新的眼光，甚至一种生活方式，给生命增加多一种可能性的叉枝。没有年假、钱不够花……总有种种理由阻止我们去旅行。
-那么做一个梦也好，跟途客一起，带眼睛去旅行。
-         </p>
-    </div>
-    <!-- end Right List -->
-    <!-- begin Left List -->
-    <div class="leftList">
-        <h2>让旅游更简单</h2>
-        <ul>
-            <li><a href="http://localhost:9999/assay.html">游记攻略</a></li>
-            <li><a href="http://localhost:9999/photos.html">旅游画册</a></li>
-            
-       
-            <li><a href="#" onclick="help();">帮助指南</a></li>
-            <li><a href="http://lvyou.baidu.com">友情链接</a></li>
-            <li><a href="#" onclick="connection();">联系我们</a></li>
-        </ul>
-    </div>
-    <!-- end Left List -->
-    
-    <br class="clearfloat" />
-</div>
-		<div class="button" align="right"><a href="#1"><img src="resources/image/top.png" alt=""/></a></div>
-<footer>
-    <p>
-        Copyright copy;cherish_yang. All rights reserved. 
-    </p>
-</footer>
-</h:body>
+        <div class="button" align="right"><a href="#1"><img src="resources/image/top.png" alt=""/></a></div>
+        <footer>
+            <p>
+                Copyright copy;cherish_yang. All rights reserved. 
+            </p>
+        </footer>
+    </h:body>
 </html>

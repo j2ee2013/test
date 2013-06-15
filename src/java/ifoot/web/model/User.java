@@ -5,20 +5,16 @@
 package ifoot.web.model;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -28,10 +24,15 @@ import javax.xml.bind.annotation.XmlTransient;
 @Table(name = "user")
 @XmlRootElement
 @NamedQueries({
+    @NamedQuery(name = "User.checkUser", query = "SELECT u FROM User u WHERE u.userName = :name and u.userPwd = :password and u.userPermission = :permission"), 
     @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u"),
     @NamedQuery(name = "User.findByUserName", query = "SELECT u FROM User u WHERE u.userName = :userName"),
     @NamedQuery(name = "User.findByUserPwd", query = "SELECT u FROM User u WHERE u.userPwd = :userPwd"),
-    @NamedQuery(name = "User.findByUserPermission", query = "SELECT u FROM User u WHERE u.userPermission = :userPermission")})
+    @NamedQuery(name = "User.findByUserPermission", query = "SELECT u FROM User u WHERE u.userPermission = :userPermission"),
+    @NamedQuery(name = "User.findByUserSex", query = "SELECT u FROM User u WHERE u.userSex = :userSex"),
+    @NamedQuery(name = "User.findByUserEmail", query = "SELECT u FROM User u WHERE u.userEmail = :userEmail"),
+    @NamedQuery(name = "User.findByUserPicture", query = "SELECT u FROM User u WHERE u.userPicture = :userPicture"),
+    @NamedQuery(name = "User.findByUserScore", query = "SELECT u FROM User u WHERE u.userScore = :userScore")})
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -50,18 +51,24 @@ public class User implements Serializable {
     @Size(min = 1, max = 10)
     @Column(name = "user_permission")
     private String userPermission;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user1")
-    private Collection<Message> messageCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user2")
-    private Collection<Message> messageCollection1;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userName")
-    private Collection<Passage> passageCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private Collection<Watchfriend> watchfriendCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user1")
-    private Collection<Watchfriend> watchfriendCollection1;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-    private Collection<Comment> commentCollection;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
+    @Column(name = "user_sex")
+    private String userSex;
+    @Size(max = 45)
+    @Column(name = "user_email")
+    private String userEmail;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "user_picture")
+    private String userPicture;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "user_score")
+    private String userScore;
 
     public User() {
     }
@@ -70,10 +77,13 @@ public class User implements Serializable {
         this.userName = userName;
     }
 
-    public User(String userName, String userPwd, String userPermission) {
+    public User(String userName, String userPwd, String userPermission, String userSex, String userPicture, String userScore) {
         this.userName = userName;
         this.userPwd = userPwd;
         this.userPermission = userPermission;
+        this.userSex = userSex;
+        this.userPicture = userPicture;
+        this.userScore = userScore;
     }
 
     public String getUserName() {
@@ -100,58 +110,36 @@ public class User implements Serializable {
         this.userPermission = userPermission;
     }
 
-    @XmlTransient
-    public Collection<Message> getMessageCollection() {
-        return messageCollection;
+    public String getUserSex() {
+        return userSex;
     }
 
-    public void setMessageCollection(Collection<Message> messageCollection) {
-        this.messageCollection = messageCollection;
+    public void setUserSex(String userSex) {
+        this.userSex = userSex;
     }
 
-    @XmlTransient
-    public Collection<Message> getMessageCollection1() {
-        return messageCollection1;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setMessageCollection1(Collection<Message> messageCollection1) {
-        this.messageCollection1 = messageCollection1;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
-    @XmlTransient
-    public Collection<Passage> getPassageCollection() {
-        return passageCollection;
+    public String getUserPicture() {
+        return userPicture;
     }
 
-    public void setPassageCollection(Collection<Passage> passageCollection) {
-        this.passageCollection = passageCollection;
+    public void setUserPicture(String userPicture) {
+        this.userPicture = userPicture;
     }
 
-    @XmlTransient
-    public Collection<Watchfriend> getWatchfriendCollection() {
-        return watchfriendCollection;
+    public String getUserScore() {
+        return userScore;
     }
 
-    public void setWatchfriendCollection(Collection<Watchfriend> watchfriendCollection) {
-        this.watchfriendCollection = watchfriendCollection;
-    }
-
-    @XmlTransient
-    public Collection<Watchfriend> getWatchfriendCollection1() {
-        return watchfriendCollection1;
-    }
-
-    public void setWatchfriendCollection1(Collection<Watchfriend> watchfriendCollection1) {
-        this.watchfriendCollection1 = watchfriendCollection1;
-    }
-
-    @XmlTransient
-    public Collection<Comment> getCommentCollection() {
-        return commentCollection;
-    }
-
-    public void setCommentCollection(Collection<Comment> commentCollection) {
-        this.commentCollection = commentCollection;
+    public void setUserScore(String userScore) {
+        this.userScore = userScore;
     }
 
     @Override

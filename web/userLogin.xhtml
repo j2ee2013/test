@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='GB2312' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <TITLE>用户登录</TITLE>
+        <LINK href="resources/css/Default.css" type="text/css" rel="stylesheet"/>
+        <LINK href="resources/css/xtree.css" type="text/css" rel="stylesheet"/>
+        <LINK href="resources/css/User_Login.css" type="text/css" rel="stylesheet"/>
+        <META http-equiv="Content-Type" content="text/html; charset=gb2312"></META>
+        <META content="MSHTML 6.00.6000.16674" name="GENERATOR"></META>
+    </h:head>
+    <h:body style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: url(../image/user_all_bg.gif) #226cc5 repeat-x 50% top; PADDING-BOTTOM: 0px; MARGIN: 110px 0px 0px; FONT: 12px/150% Arial, '宋体' ,Helvetica,sans-serif; PADDING-TOP: 0px; TEXT-DECORATION: none">
+
+        <DIV></DIV>
+
+        <DIV id="user_login">
+            <DL>
+                <DD id="user_top">
+                    <UL>
+                        <LI class="user_top_l"></LI>
+                        <LI class="user_top_c"></LI>
+                        <LI class="user_top_r"></LI></UL>
+                </DD>
+                <DD id="user_main">
+                    <UL>
+                        <LI class="user_main_l"></LI>
+                        
+                        <h:form>
+                            <p:growl id="msg"/>
+                        <LI class="user_main_c">
+                            <DIV class="user_main_box">
+                               <!-- 
+                                <h:panelGrid columns="3">
+                                    <h:outputLabel class="user_main_text" value="用户名: "/>
+                                    <h:inputText class="TxtUserNameCssClass" style="maxLength:20"/>
+                                    <h:outputFormat value=""/>
+                                    
+                                    <h:outputLabel class="user_main_text" value="密码: " />
+                                    <h:inputSecret class="TxtPasswordCssClass"/>
+                                    <h:outputFormat value=""/>
+                                    
+                                    <h:outputLabel class="user_main_text" value="验证码: "/>
+                                    <h:inputText class="TxtCheckingCode"></h:inputText>
+                                    
+                                    
+                                    </h:panelGrid>
+                               
+                               
+                               <INPUT class="TxtUserNameCssClass" id="TxtUserName" 
+                                                                       maxLength="20" name="TxtUserName"/>
+                               
+                               <INPUT class="TxtPasswordCssClass" id="TxtPassword" 
+                                                                       type="password" name="TxtPassword"/>
+                               
+                               <INPUT class="TxtCheckingCode" id="TxtUserName" 
+                                                                                                   maxLength="4" name="TxtUserName"/>s
+                                
+                               
+                               <INPUT class="IbtnEnterCssClass" id="IbtnEnter" 
+                                                       style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+                                                       onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("IbtnEnter", "", true, "", "", false, false))' 
+                                                       type="image" src="resources/image/user_botton.gif" name="IbtnEnter"/> 
+                               -->
+                                <UL>
+                                    <LI class="user_main_text">用户名： </LI>
+                                    <LI class="user_main_input"><h:inputText value="#{logincontrol.user.userName}" class="TxtUserNameCssClass" style="maxLength:20"/> </LI></UL>
+                               
+                                
+                                
+                                <UL>
+                                    <LI class="user_main_text">密 码： </LI>
+                                    <LI class="user_main_input"><h:inputSecret value="#{logincontrol.user.userPwd}" class="TxtPasswordCssClass"/> </LI></UL>
+                                    
+                                    
+                                    <UL>
+                                    <LI class="user_main_text">身份： </LI>
+                                    <LI class="user_main_input"><p:selectBooleanButton value="#{logincontrol.userPer}" required="true" onLabel="管理员" offLabel="用户"/> </LI></UL>
+                                
+                                <UL>
+                                    <LI class="user_main_text">验证码： </LI>
+                                    <LI class="user_main_input"><LI class="user_main_input"><h:inputText value="#{logincontrol.validateCode}" class="TxtCheckingCode"></h:inputText>  </LI>
+                                        <img src="validateCode.jsp" title="点击更换" align="absmiddle" style="cursor:pointer;" onClick="window.location.href=window.location.href" /></LI></UL></DIV></LI>
+                            
+                            <LI class="user_main_r">
+                                <h:commandLink action="#{logincontrol.doLogin()}">
+                                    <h:graphicImage url="resources/image/user_botton.gif"/>
+                                </h:commandLink>
+                            </LI>
+                    </h:form>
+                        </UL>
+                </DD>
+                <DD id="user_bottom">
+                    <UL>
+                        <LI class="user_bottom_l"></LI>
+                        <LI class="user_bottom_c"><SPAN style="MARGIN-TOP: 40px"> Copyright &copy;cherish_yang. All rights reserved.</SPAN> </LI>
+                        <LI class="user_bottom_r"></LI></UL></DD></DL></DIV><SPAN id="ValrUserName" 
+                                                                  style="DISPLAY: none; COLOR: red"></SPAN><SPAN id="ValrPassword" 
+                                                       style="DISPLAY: none; COLOR: red"></SPAN><SPAN id="ValrValidateCode" 
+                                                       style="DISPLAY: none; COLOR: red"></SPAN>
+        <DIV id="ValidationSummary1" style="DISPLAY: none; COLOR: red"></DIV>
+
+        <DIV></DIV>
+
+
+    </h:body>
+</html>
+

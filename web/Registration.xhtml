@@ -6,7 +6,9 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
     <h:head>
         <title>Creates a new user</title>
     </h:head>
@@ -17,26 +19,40 @@ and open the template in the editor.
             <p:growl id="msg"/>
             <h:panelGrid columns="3" >
                 <h:outputLabel for="userName" value="Name: "/>
-                <p:inputText id="userName" immediate="true" value="#{registratorController.user.userName}">
+                <p:inputText id="userName" immediate="true" value="#{registrationControl.user.userName}">
                     <p:ajax event="keyup" update="userNameAvaliable"/>
                 </p:inputText>
-                <h:outputLabel id="userNameAvaliable" value="#{registratorController.nameAvaliable}"/>
+                <h:outputLabel id="userNameAvaliable" value="#{registrationControl.nameAvaliable}"/>
                 
                 <h:outputLabel for="userPwd" value="Pass Word: "/>
-                <p:password id="userPwd" value="#{registratorController.user.userPwd}" feedback="true"/>
+                <p:password id="userPwd" value="#{registrationControl.user.userPwd}" feedback="true"/>
                 <h:outputLabel value=""/>
                 
                 <h:outputLabel value="是否是管理员"/>
-                <p:selectBooleanButton value="#{registratorController.user.userPermission}" onLabel="admin" offLabel="user" onIcon="ui-icon-check" offIcon="ui-icon-close">  
-                    <p:ajax update="msg" listener="#{registratorController.addMessage()}"/>  
+                <p:selectBooleanButton value="#{registrationControl.user.userPermission}" onLabel="admin" offLabel="user" onIcon="ui-icon-check" offIcon="ui-icon-close">  
+                    <p:ajax update="msg" listener="#{registrationControl.addMessage()}"/>  
                 </p:selectBooleanButton>  
+                <h:inputHidden/>
+                
+                <h:outputText value="性别: " />  
+                <p:selectOneButton value="#{registrationControl.user.userSex}">  
+                    <f:selectItem itemLabel="男" itemValue="male" />  
+                    <f:selectItem itemLabel="女" itemValue="female" />
+                </p:selectOneButton>  
+                <h:inputHidden/>
+                
+                <h:outputText value="email: "/>
+                <p:inputText value="#{registrationControl.user.userEmail}"/>
+                <h:inputHidden/>
+                
+
+                
                 
             </h:panelGrid>
             
-            <p:commandButton value="Create a User" action="#{registratorController.doRegister()}"/>
+            <p:commandButton value="Create a User" action="#{registrationControl.doRegister()}"/>
         </h:form>
         <hr/>
         <i>A simple User</i>
-        
     </h:body>
 </html>

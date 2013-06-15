@@ -23,39 +23,41 @@ and open the template in the editor.
             <p:growl id="msg"/>
             <h:panelGrid columns="3" style="margin-bottom:10px" cellpadding="5">
                 <h:outputLabel for="name" value="用户名: "/>
-                <p:inputText id="name" value="#{loginController.user.userName}"/>
+                <p:inputText id="name" value="#{logincontrol.user.userName}"/>
                 <h:outputLabel value=""/>
             
                 <h:outputLabel for="pwd" value="密码："/>
-                <p:password id="pwd" value="#{loginController.user.userPwd}"/>
+                <p:password id="pwd" value="#{logincontrol.user.userPwd}"/>
                 <h:outputLabel value=""/>
             
                 <h:outputText value="是否管理员" />
-                <p:selectBooleanButton value="false" onLabel="Yes" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close">  
-                    <p:ajax update="msg" listener="#{loginController.addMessage()}"/>  
+                <p:selectBooleanButton value="#{logincontrol.userPer}" onLabel="Admin" offLabel="User" onIcon="ui-icon-check" offIcon="ui-icon-close">  
+                    <p:ajax update="msg" listener="#{logincontrol.addMessage()}"/>  
                 </p:selectBooleanButton>
                 <h:outputLabel value=""/>
                 
                 
                 <h:outputLabel value="验证码： "/>
-                <h:inputText id="validateKey" value="#{loginController.validateCode}"/>
+                <h:inputText id="validateKey" value="#{logincontrol.validateCode}"/>
                 <img src="validateCode.jsp" title="点击更换" align="absmiddle" style="cursor:pointer;" onClick="window.location.href=window.location.href" />
             </h:panelGrid>
             
-            <p:commandButton action="#{loginController.doLogin()}" value="登陆"/>
-    
+            <p:commandButton action="#{logincontrol.doLogin()}" value="登陆" update="errorMessage">
+            </p:commandButton>
+            <h:outputLabel id="errorMessage" value="#{logincontrol.errorMessage}"/>
+            
         </h:form>
         
         
         
         
-        <h:form >  
+        <h:form>  
   
                 <p:growl id="messages"/>  
   
-                <p:splitButton value="Save" actionListener="#{loginController.save}" update="messages" icon="ui-icon-disk">  
-                    <p:menuitem value="Update" actionListener="#{loginController.update()}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>  
-                    <p:menuitem value="Delete" actionListener="#{loginController.delete}" ajax="false" icon="ui-icon-close"/>  
+                <p:splitButton value="Save" actionListener="#{logincontrol.save}" update="messages" icon="ui-icon-disk">  
+                    <p:menuitem value="Update" actionListener="#{logincontrol.update()}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>  
+                    <p:menuitem value="Delete" actionListener="#{logincontrol.delete}" ajax="false" icon="ui-icon-close"/>  
                     <p:separator />  
                     <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink"/>  
                 </p:splitButton>  

@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title> 注册页面 </title>
+        <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
+        <link href="resources/css/registration_style.css" rel="stylesheet" type="text/css" />
+    </h:head>
+    <h:body>
+        
+
+        <!-- 整体块 -->
+        <div class="wrapper">
+            <!-- 头部 -->
+            <div class="header">
+                <!-- 图标 -->
+                <div class="logo">
+                    <!-- <img src="register/logo.jpg" /> -->
+                </div>
+                &nbsp;&nbsp;<h:outputLink value="MainPage.xhtml">返回首页</h:outputLink>  &nbsp;&nbsp;<h:outputLink value="userLogin.xhtml">已有账号,登陆</h:outputLink>
+                <!-- 头部信息 -->
+                <div class="headerInfo">
+                    <div class="headerTitle">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 注册进度导航 -->
+            <div class="nav">
+                <w>1. 填写信息 &nbsp;&nbsp; 2. 注册成功   </w>  
+            </div>
+
+            <!-- 注册内容块 -->
+            <div class="contentBody">
+                     <h:form>
+                <p:growl id="msg"/>
+                <!-- 用户名块 -->
+                <div class="uname">
+                    <!-- 用户名标签 -->
+                    <div class="unameTitle"><m>用户名：</m></div>
+                    <!-- 用户名输入框  <input type="text" name="" value="" id="datepicker" class="searcharea" /> -->
+                    <div class=""><p:inputText id="userName" immediate="true" value="#{registrationControl.user.userName}">
+                    <p:ajax event="keyup" update="userNameAvaliable"/>
+                </p:inputText>
+                <h:outputLabel id="userNameAvaliable" value="#{registrationControl.nameAvaliable}"/></div>
+                    <!-- 用户名输入提示 -->
+                    <div class="regtip"><n>不超过7个汉字，或14个字节(数字，字母和下划线)</n></div>
+                </div><!-- 用户名块 结束 -->
+
+
+                <!-- 密码块 -->
+                <div class="pwd">
+                    <div class="pwds">
+                        <!-- 第一个密码块 -->
+                        <div class="pwd1">
+                            <!-- 密码标签 -->
+                            <div class="pwdTitle"><m>密码：</m></div>
+                            <!-- 密码输入框 -->
+                            <div><p:password id="userPwd" value="#{registrationControl.user.userPwd}" feedback="true"/><!--<input type="text" name="" value="" id="datepicker" class="searcharea" />--></div>
+                        </div>
+
+
+                        <!-- 确认密码块 -->
+                        <div class="pwd2">
+                            <!-- 确认密码标签 -->
+                            <div class="pwdTitle"><m>确认密码：</m></div>
+                            <!-- 确认密码输入框 -->
+                            <div><p:password  feedback="false"/><!--<input type="text" name="" value="" id="datepicker" class="searcharea" />--></div>
+                        </div>
+                    </div>
+
+
+                    <!-- 密码输入提示 -->
+                    <div class="regtip"><n>密码长度6～14位，字母区分大小写。</n></div>
+                </div><!-- 密码块 结束 -->
+
+
+                <!-- 性别块 -->
+                <div>
+                    <!-- 性别标签 -->
+                    <div class="genderTitle"><m>性别：</m></div>
+                    <!-- 性别单选按钮 -->
+                    <div>
+                        <p:selectOneRadio value="#{registrationControl.user.userSex}">
+                    <f:selectItem itemLabel="男" itemValue="male" />  
+                    <f:selectItem itemLabel="女" itemValue="female" />
+        </p:selectOneRadio> </div>
+                </div><!-- 性别块 结束 -->
+
+
+                <!-- 电子邮件块 -->
+                <div>
+                    <!-- 电子邮件标签 -->
+                    <div class="emailTitle"><m>电子邮件地址：</m></div>
+                    <!-- 电子邮件输入框 -->
+                    <div> <p:inputText value="#{registrationControl.user.userEmail}"/><!--<input type="text" name="" value="" id="datepicker" class="searcharea" />--></div>
+                    <!-- 电子邮件输入提示 -->
+                    <div class="regtip"><n>请确保大小写输入正确。</n></div>
+                </div><!-- 电子邮件块 结束 -->
+
+
+                <!-- 验证码块 -->
+                <div class="verification">
+                    <div class="vcode">
+                        <!-- 验证码标签 -->
+                        <div class="vTitle"><m>输入图中字符：</m></div>
+                        <!-- 验证码输入框 -->
+                        <div><h:inputText value="#{registrationControl.validateCode}"/><!--<input type="text" name="" value="" id="datepicker" class="searcharea" />--></div>
+                    </div>
+                    <!-- 验证码图片 -->
+                    <div class="vimg"><img src="validateCode.jsp" title="点击更换" align="absmiddle" style="cursor:pointer;" onClick="window.location.href=window.location.href" /></div>
+                    <!-- 更换验证码图片 -->
+                    <div class="regtip">
+                        <div class="vtip"><a onClick="window.location.href=window.location.href" >看不清？</a></div>
+                    </div>
+                </div><!-- 验证码块 结束 -->
+
+
+                <!-- 提交按钮块 -->
+                <div>
+                           
+                    <h:commandButton value=" 同意以下协议并提交 " action="#{registrationControl.doRegister()}"/><!--<input type="button" value=" 同意以下协议并提交 " />-->
+
+        
+        
+                </div><!-- 提交按钮块 结束 -->
+
+
+                <!-- 协议块 -->
+                <div class="agree">
+                    <textarea>
+协议内容。。。。。。
+                    </textarea>
+                </div><!-- 协议块 结束 -->
+
+                    
+    </h:form>
+            </div><!-- 注册内容块 结束 -->
+
+
+            <div class="footer">
+                Copyright &copy;cherish_yang. All rights reserved.
+            </div>
+            
+            
+        </div><!-- 整体块wrapper 结束 -->
+    </h:body>
+</html>
+
